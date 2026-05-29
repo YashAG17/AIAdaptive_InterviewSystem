@@ -37,12 +37,3 @@ Option D — Open interactive canvas in Cursor
   2. Select: adaptive-interview-coaching-architecture.canvas.tsx
   3. Canvas opens beside chat with 5 tabbed diagrams
   4. Screenshot each tab for slides
-
-IMPORTANT — NOT IN SOCIONERD PROJECT
---------------------------------------
-These files live on your Desktop and in Cursor's internal folder.
-They are NOT inside d:\Projects\socionerd-hackathon and will NOT
-be committed to that git repo unless you manually copy them there.
-
-Cursor canvas original location (internal, safe to ignore):
-  C:\Users\91941\.cursor\projects\d-Projects-socionerd-hackathon\canvases\
