@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>AI-Powered Adaptive Interview Coaching System</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:#eef1f8;color:#1a1f36;padding:32px}
+.slide{width:1800px;min-height:960px;background:#fff;border-radius:16px;padding:48px 56px;margin-bottom:40px;box-shadow:0 4px 24px rgba(60,80,180,.08)}
+.slide-tag{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6366f1;background:#eef2ff;padding:6px 14px;border-radius:20px;display:inline-block;margin-bottom:12px}
+h1{font-size:32px;font-weight:700;background:linear-gradient(135deg,#2563eb,#7c3aed);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
+.subtitle{font-size:14px;color:#64748b;margin-bottom:28px}
+.layer{border:1px solid #e2e8f0;border-left:4px solid;border-radius:12px;padding:18px 22px;margin-bottom:10px;background:#fafbff}
+.layer-title{font-size:11px;font-weight:700;text-transform:uppercase;color:#475569;margin-bottom:14px}
+.row{display:flex;gap:14px;flex-wrap:wrap;justify-content:center}
+.node{padding:12px 16px;border-radius:12px;border:2px solid;background:#fff;font-size:12px;font-weight:600;text-align:center;min-width:150px}
+.node sub{display:block;font-size:10px;font-weight:400;color:#94a3b8;margin-top:4px}
+.node.hl{background:#f5f3ff;border-color:#6366f1}
+.blue{border-color:#3b82f6}.purple{border-color:#8b5cf6}.pink{border-color:#ec4899}.green{border-color:#10b981}.orange{border-color:#f59e0b}
+.arrow{text-align:center;color:#94a3b8;font-size:18px;padding:4px 0}
+.merge{padding:10px 20px;border-radius:20px;border:2px dashed #6366f1;background:#eef2ff;color:#6366f1;font-size:12px;font-weight:700;text-align:center;margin:0 auto}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{border:1px solid #e2e8f0;border-radius:12px;padding:14px;background:#fafbff;font-size:11px}
+.card.hl{border-color:#6366f1;background:#f5f3ff}
+.card b{display:block;font-size:12px;margin-bottom:8px}
+.branch{display:flex;gap:20px;justify-content:center;margin:16px 0}
+.col{flex:1;max-width:260px;text-align:center}
+.tag{display:inline-block;font-size:10px;font-weight:700;padding:4px 10px;border-radius:6px;margin-bottom:10px}
+.tag.hi{color:#059669;background:#d1fae5}.tag.med{color:#d97706;background:#fef3c7}.tag.lo{color:#db2777;background:#fce7f3}
+table{width:100%;border-collapse:collapse;font-size:11px;margin-top:16px}
+th{background:#f1f5f9;padding:10px;text-align:left}td{padding:10px;border-top:1px solid #e2e8f0}
+.report{display:flex;flex-direction:column;gap:6px}
+.ri{display:flex;gap:10px;align-items:center;padding:10px 14px;border:1px solid #d1fae5;border-radius:10px;font-size:12px}
+.num{width:22px;height:22px;border-radius:6px;background:#d1fae5;color:#10b981;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:16px}
+.stat{padding:14px;border:1px solid #e2e8f0;border-radius:10px;text-align:center}
+.stat.hl{border-color:#6366f1;background:#f5f3ff}
+.stat b{font-size:16px;color:#6366f1;display:block}
+.stat span{font-size:10px;color:#94a3b8}
+.overview{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.mini{border:1px solid #e2e8f0;border-left:4px solid #6366f1;border-radius:10px;padding:14px;font-size:11px;line-height:1.7}
+.mini h3{font-size:11px;text-transform:uppercase;color:#6366f1;margin-bottom:6px}
+.legend{display:flex;gap:20px;justify-content:center;margin-top:20px;font-size:11px;color:#64748b}
+.legend i{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:4px}
+</style>
+</head>
+<body>
+
+<div class="slide" id="slide-overview">
+  <div class="slide-tag">Mini Project</div>
+  <h1>AI-Powered Adaptive Interview Coaching System</h1>
+  <p class="subtitle">Complete System Overview</p>
+  <div class="overview">
+    <div class="mini" style="border-left-color:#3b82f6"><h3>Presentation Layer</h3>User Login → Domain Selection → Interview UI (Text/Voice) → Dashboard & Analytics</div>
+    <div class="mini" style="border-left-color:#6366f1"><h3>Application Layer</h3>Interview Engine → Adaptive Decision Engine (RL-Inspired) → Final Report Generator</div>
+    <div class="mini" style="border-left-color:#8b5cf6"><h3>AI / ML Processing</h3>Whisper STT · TF-IDF · Cosine Similarity · STAR Evaluator · Communication · Scoring</div>
+    <div class="mini" style="border-left-color:#10b981"><h3>Data Layer</h3>Domain Question DB · User Performance Store · Session History</div>
+    <div class="mini" style="border-left-color:#ec4899;grid-column:span 2"><h3>Execution Flow</h3>Login → Load Questions → Session → Response (Text/Voice) → Dual Pipeline → NLP → STAR + Communication → Scoring → Adaptive Decision → Next Question (Loop) → Report → Dashboard</div>
+    <div class="mini" style="border-left-color:#f59e0b"><h3>Adaptive Logic</h3>High: Harder + Cross Q · Medium: Same Level · Low: Easier + Hints + Coaching</div>
+    <div class="mini" style="border-left-color:#10b981"><h3>Final Report</h3>Overall Score · STAR · Communication · Technical · Confidence · Strengths · Weak Areas · Suggestions</div>
+  </div>
+</div>
+
+<div class="slide" id="slide-architecture">
+  <div class="slide-tag">Diagram 1 of 5</div>
+  <h1>Main System Architecture</h1>
+  <p class="subtitle">Layered architecture — presentation, application, AI/ML, and data</p>
+  <div class="layer" style="border-left-color:#3b82f6"><div class="layer-title">Presentation Layer</div>
+    <div class="row"><div class="node blue">User Login</div><div class="node blue">Interview UI<sub>Text & Voice</sub></div><div class="node blue">Dashboard & Analytics</div></div></div>
+  <div class="arrow">↓ REST / WebSocket</div>
+  <div class="layer" style="border-left-color:#6366f1"><div class="layer-title">Application Layer</div>
+    <div class="row"><div class="node purple">Interview Engine</div><div class="node purple hl">Adaptive Decision Engine<sub>RL-Inspired</sub></div><div class="node purple">Report Generator</div></div></div>
+  <div class="arrow">↓</div>
+  <div class="layer" style="border-left-color:#8b5cf6"><div class="layer-title">AI / ML Processing Layer</div>
+    <div class="row"><div class="node pink">Speech-to-Text<sub>Whisper</sub></div><div class="node purple">NLP Engine<sub>TF-IDF · Cosine</sub></div><div class="node purple">STAR Evaluator</div><div class="node purple">Communication Analyzer</div><div class="node purple">Scoring Engine</div><div class="node pink">Confidence Analyzer</div></div></div>
+  <div class="arrow">↓</div>
+  <div class="layer" style="border-left-color:#10b981"><div class="layer-title">Data Layer</div>
+    <div class="row"><div class="node green">Domain Question DB</div><div class="node green">User Performance Store</div><div class="node green">Session History</div></div></div>
+  <div class="legend"><span><i style="background:#3b82f6"></i>Presentation</span><span><i style="background:#8b5cf6"></i>AI/ML</span><span><i style="background:#ec4899"></i>Voice</span><span><i style="background:#10b981"></i>Data</span></div>
+</div>
+
+<div class="slide" id="slide-execution">
+  <div class="slide-tag">Diagram 2 of 5</div>
+  <h1>Detailed Execution Flow</h1>
+  <p class="subtitle">End-to-end session lifecycle with dual input pipelines</p>
+  <div style="text-align:center">
+    <div class="node blue">User Login</div><div class="arrow">↓</div>
+    <div class="node blue">Select Interview Domain</div><div class="arrow">↓</div>
+    <div class="node green">Load Question Database</div><div class="arrow">↓</div>
+    <div class="node blue">Start Interview Session</div><div class="arrow">↓</div>
+    <div class="node purple hl">Interview Engine Selects Question</div><div class="arrow">↓</div>
+    <div class="node blue">User Gives Response<sub>Text · Voice</sub></div><div class="arrow">↓ branch</div>
+  </div>
+  <div class="row" style="margin:12px 0">
+    <div class="col"><div class="tag" style="background:#dbeafe;color:#3b82f6">TEXT PIPELINE</div>
+      <div class="node blue">User Text</div><div class="arrow">↓</div><div class="node blue">Text Cleaning</div><div class="arrow">↓</div><div class="node blue">Tokenization</div><div class="arrow">↓</div><div class="node blue">Stopword Removal</div><div class="arrow">↓</div><div class="node blue">TF-IDF Vectorization</div></div>
+    <div style="align-self:center"><div class="merge">NLP & Semantic<br/>Analysis Engine</div></div>
+    <div class="col"><div class="tag" style="background:#fce7f3;color:#db2777">VOICE PIPELINE</div>
+      <div class="node pink">Voice Input</div><div class="arrow">↓</div><div class="node pink">Whisper STT</div><div class="arrow">↓</div><div class="node pink">Filler · Pause · Speed</div><div class="arrow">↓</div><div class="node pink">Confidence Score</div></div>
+  </div>
+  <div style="text-align:center">
+    <div class="arrow">↓</div><div class="node purple">Cosine Similarity Check</div><div class="arrow">↓</div>
+    <div class="node purple">STAR Format Evaluation</div><div class="arrow">↓</div>
+    <div class="node purple">Communication Analysis</div><div class="arrow">↓</div>
+    <div class="node purple hl">Scoring & Evaluation Engine</div><div class="arrow">↓</div>
+    <div class="node purple hl">Adaptive Decision Engine</div><div class="arrow">↺ loop</div>
+    <div class="merge">Loop → Interview Engine Selects Question</div><div class="arrow">↓</div>
+    <div class="node blue">Session Ends</div><div class="arrow">↓</div>
+    <div class="node green">Final Report Generator</div><div class="arrow">↓</div>
+    <div class="node blue">Dashboard & Analytics</div>
+  </div>
+</div>
+
+<div class="slide" id="slide-modules">
+  <div class="slide-tag">Diagram 3 of 5</div>
+  <h1>Modular AI Components</h1>
+  <p class="subtitle">Independently deployable modules with defined I/O</p>
+  <div class="grid2">
+    <div class="card"><b>Speech Processing</b>In: Raw audio → Out: Transcript, Confidence<br/>Tech: Whisper API, Feature extraction</div>
+    <div class="card"><b>Text Preprocessing</b>In: Raw text → Out: Token vectors<br/>Tech: Tokenization, Stopwords, TF-IDF</div>
+    <div class="card"><b>Semantic Analysis</b>In: User + Expected vectors → Out: Relevance score<br/>Tech: Cosine similarity</div>
+    <div class="card"><b>STAR Evaluator</b>In: Parsed text → Out: STAR score, Breakdown<br/>Tech: S/T/A/R detection</div>
+    <div class="card"><b>Communication Analyzer</b>In: Text/transcript → Out: Comm score<br/>Tech: Grammar, Clarity, Fluency</div>
+    <div class="card"><b>Scoring Engine</b>In: All scores → Out: Overall + breakdown<br/>Tech: Weighted aggregation</div>
+    <div class="card hl"><b>Adaptive Decision Engine</b>In: Score + History → Out: Difficulty, Hints<br/>Tech: RL-inspired policy</div>
+    <div class="card"><b>Report Generator</b>In: Session data → Out: Report, Recommendations<br/>Tech: Template rendering</div>
+  </div>
+</div>
+
+<div class="slide" id="slide-adaptive">
+  <div class="slide-tag">Diagram 4 of 5</div>
+  <h1>Adaptive Decision Flow</h1>
+  <p class="subtitle">RL-inspired policy for dynamic difficulty adjustment</p>
+  <div style="text-align:center">
+    <div class="node purple">Scoring & Evaluation Engine</div><div class="arrow">↓</div>
+    <div class="node purple hl">Adaptive Decision Engine</div><div class="arrow">↓ score threshold</div>
+  </div>
+  <div class="branch">
+    <div class="col"><div class="tag hi">HIGH SCORE</div><div class="node green">Increase Difficulty</div><div class="arrow">↓</div><div class="node green">Ask Cross Questions</div></div>
+    <div class="col"><div class="tag med">MEDIUM SCORE</div><div class="node orange">Continue Same Difficulty</div></div>
+    <div class="col"><div class="tag lo">LOW SCORE</div><div class="node pink">Easier Question</div><div class="arrow">↓</div><div class="node pink">Hint Follow-Up</div><div class="arrow">↓</div><div class="node pink">Coaching Questions</div></div>
+  </div>
+  <div style="text-align:center">
+    <div class="arrow">↓ merge</div><div class="node green">Store User Performance</div><div class="arrow">↓</div>
+    <div class="node purple">Generate Next Question</div><div class="arrow">↺</div>
+    <div class="merge">Loop → Interview Engine</div>
+  </div>
+  <table><tr><th>Field</th><th>Purpose</th><th>Used By</th></tr>
+    <tr><td>Weak Areas</td><td>Skills needing improvement</td><td>Adaptive Engine, Report</td></tr>
+    <tr><td>Strong Areas</td><td>Demonstrated competencies</td><td>Report, Dashboard</td></tr>
+    <tr><td>STAR Mistakes</td><td>Missing S/T/A/R parts</td><td>Coaching Questions</td></tr>
+    <tr><td>Previous Scores</td><td>Performance trend</td><td>Difficulty Adjustment</td></tr></table>
+</div>
+
+<div class="slide" id="slide-feedback">
+  <div class="slide-tag">Diagram 5 of 5</div>
+  <h1>Final Feedback Pipeline</h1>
+  <p class="subtitle">Post-session report and longitudinal analytics</p>
+  <div style="text-align:center;margin-bottom:24px"><div class="node blue">Session Ends</div><div class="arrow">↓</div><div class="node green hl">Final Report Generator</div></div>
+  <div class="grid2">
+    <div><b style="font-size:13px;display:block;margin-bottom:10px">Final Feedback Report</b>
+      <div class="report"><div class="ri"><div class="num">01</div>Overall Score</div><div class="ri"><div class="num">02</div>STAR Evaluation</div><div class="ri"><div class="num">03</div>Communication Analysis</div><div class="ri"><div class="num">04</div>Technical Relevance</div><div class="ri"><div class="num">05</div>Confidence Analysis</div><div class="ri"><div class="num">06</div>Strengths</div><div class="ri"><div class="num">07</div>Weak Areas</div><div class="ri"><div class="num">08</div>Improvement Suggestions</div><div class="ri"><div class="num">09</div>Recommended Practice Areas</div></div></div>
+    <div><b style="font-size:13px;display:block;margin-bottom:10px">Dashboard & Analytics</b>
+      <div class="report"><div class="ri"><div class="num">📊</div>Previous Interviews</div><div class="ri"><div class="num">📈</div>Score Trends</div><div class="ri"><div class="num">📉</div>Improvement Graphs</div><div class="ri"><div class="num">🎯</div>Performance Tracking</div></div></div>
+  </div>
+  <div class="stats"><div class="stat"><b style="color:#8b5cf6">0–100</b><span>Technical Relevance</span></div><div class="stat"><b style="color:#8b5cf6">0–100</b><span>STAR Compliance</span></div><div class="stat"><b style="color:#ec4899">0–100</b><span>Confidence</span></div><div class="stat"><b style="color:#3b82f6">0–100</b><span>Communication</span></div><div class="stat hl"><b>Weighted Avg</b><span>Overall Score</span></div></div>
+</div>
+
+</body>
+</html>
